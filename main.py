@@ -4,20 +4,21 @@ print("what part of the language do you struggle with most? or would like to tes
 #the current number of quizes is not set there might not acctually be 5 options by the end 11/5/22
 print("A animals,B objects,C family members,D colours or E all of the above")
 #abcde is def so that I can call it at any time its purpose is to personalise thier quiz questions 11/5/22
-def abcde():
+def abc():
   abcde = input().lower()
-  if input == "a":
+  if abcde == "a":
     print("")
-  if input == "b":
+  elif abcde == "b":
     print("")
-  if input == "c":
+  elif abcde == "c":
     print("")
-  if input == "d":
+  elif abcde == "d":
     print("")
-  if input == "e":
+  elif abcde == "e":
     print("")
-  if input == "quit":
+  elif abcde == "quit":
     quit()
   else:
     print("answer A/B/C/D/E or anwer quit to quit")
-    abcde()
+    abc()
+abc()
