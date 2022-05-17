@@ -53,6 +53,7 @@ def quizb():
   else:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
+    question = 0
     abc()
 #this is the quiz for the Māori names of english words 13/5/22
 def quiza():
@@ -152,16 +153,16 @@ def abc():
     if ab == "a":
       print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
       questionlista = ['pen','pencil','book','scissors','paper','eraser','ruler']
-      questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Rākauine']
-      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
-      answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine']
+      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine']
+      answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine']
       words()
     if ab == "b":
       print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
-      questionlista = ['book','computer','oven','door','window','cupboard','ruler']
-      questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Rākauine']
-      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
-      answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      questionlista = ['book','computer','oven','door','window','cupboard','chair','table','fan']
+      questionlistb = ['pukapuka','rorohiko','oumu','tatau ','wini','kaapata','tuuru','papa-kai','kooheuheu']
+      answersforlistaa = ['pukapuka','rorohiko','oomu','tatau ','wini','kaapata','nohoanga','paparahua','teepu','koowhiuwhiu']
+      answersforlistab = ['pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu']
       words()
     else:
       print("answer A/B/C/D/E or anwer quit to quit")
