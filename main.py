@@ -27,6 +27,8 @@ def quizb():
     question1 = random.choice(l)
     if question ==1:
       print("question"+str(question))
+    elif question == 6:
+      print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
     else:
       print("question"+str(question))
     print("what is the English name for",questionlistb[question1])
@@ -69,6 +71,8 @@ def quiza():
     abc()
   if question ==1:
     print("question"+str(question))
+  elif question == 6:
+    print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
   else:
     print("question"+str(question))
   if l == "list":
@@ -143,8 +147,25 @@ def abc():
     words()
   elif abcde == "b":
     print("you have selected objects")
-    print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
-    words()
+    print("A:household objects or B: school objects")
+    ab = input().lower()
+    if ab == "a":
+      print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
+      questionlista = ['pen','pencil','book','scissors','paper','eraser','ruler']
+      questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      words()
+    if ab == "b":
+      print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
+      questionlista = ['book','computer','oven','door','window','cupboard','ruler']
+      questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Rākauine']
+      words()
+    else:
+      print("answer A/B/C/D/E or anwer quit to quit")
+      abc()
   elif abcde == "c":
     print("you have selected family members 17 questions")
     print("the quiz you have chosen can only be done with the Māori names of english words")
