@@ -208,14 +208,14 @@ def abc():
     print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
     words()
   elif abcde == "e":
+    questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit','pen','pencil','book','scissors','paper','eraser','ruler','book','computer','oven','door','window','cupboard','chair','table','fan','family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother','red','green','blue','yellow','white','pink','purple','black','orange']
+    questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine','pukapuka','rorohiko','oumu','tatau ','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','Mangu','karaka']
     print("you have selected all of the above")
-    print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
-    words()
+    print("for simplicity and because family members anre included in this quiz the quiz you have chosen can only be done with the Māori names of english words")
+    quizb()
   elif abcde == "quit":
     quit()
   else:
     print("answer A/B/C/D/E or anwer quit to quit")
     abc()
 abc()
-def quiz():
-  print("")
