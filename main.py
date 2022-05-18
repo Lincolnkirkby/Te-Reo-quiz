@@ -28,7 +28,7 @@ def quizb():
     if question ==1:
       print("question"+str(question))
     elif question == 6:
-      print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
+      print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% at any time you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
     else:
       print("question"+str(question))
     print("what is the English name for",questionlistb[question1])
@@ -43,6 +43,7 @@ def quizb():
       quit()
     elif answer1 == "return":
       l = "list"
+      question = 0
       print("A animals,B objects,C family members,D colours or E all of the above")
       abc()
     else:
@@ -53,6 +54,7 @@ def quizb():
   else:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
+    l = "list"
     question = 0
     abc()
 #this is the quiz for the Māori names of english words 13/5/22
@@ -69,11 +71,13 @@ def quiza():
   if not l:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
+    l = "list"
+    question = 0
     abc()
   if question ==1:
     print("question"+str(question))
   elif question == 6:
-    print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
+    print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% at any time you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
   else:
     print("question"+str(question))
   if l == "list":
@@ -100,14 +104,33 @@ def quiza():
   elif answer1 == "quit":
     quit()
   elif answer1 == "return":
+    question = 0
     l = "list"
     print("A animals,B objects,C family members,D colours or E all of the above")
     abc()
   else: 
-    print("sorry but the anwer was",questionlistb[question1])
-    wrong += 1
-    l.remove(question1)
-    quiza()
+    if answersforlistab[question1] != questionlistb[question1]:
+      if answersforlistab[question1] == answersforlistaa[question1]:
+        print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1],"or",answersforlistaa[question1])
+        wrong += 1
+        l.remove(question1)
+        quiza()
+      else:
+        print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1])
+        wrong += 1
+        l.remove(question1)
+        quiza()
+    elif answersforlistab[question1] != answersforlistaa[question1]:
+      print("sorry but the anwer was either",answersforlistab[question1],"or",answersforlistaa[question1])
+      wrong += 1
+      l.remove(question1)
+      quiza()
+    else: 
+      print("sorry but the anwer was",answersforlistab[question1])
+      wrong += 1
+      l.remove(question1)
+      quiza()
+      
 #words is to ask the player whether they want to traslate english words or Te Reo words 13/2/22
 def words():
   global questionlista
@@ -154,7 +177,7 @@ def abc():
       print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
       questionlista = ['pen','pencil','book','scissors','paper','eraser','ruler']
       questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine']
-      answersforlistaa = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine']
+      answersforlistaa = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine']
       answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine']
       words()
     if ab == "b":
@@ -174,10 +197,14 @@ def abc():
     questionlista = ['family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother']
     questionlistb = ['whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine']
     answersforlistaa = ['whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine']
-    answersforlistab = ['ngare','maatua','paapara','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','tāua']
+    answersforlistab = ['ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','tāua']
     quiza()
   elif abcde == "d":
     print("you have selected colours")
+    questionlista = ['red','green','blue','yellow','white','pink','purple','black','orange']
+    questionlistb = ['whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','Mangu','karaka']
+    answersforlistaa = ['whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
+    answersforlistab = ['whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','Pango','karaka']
     print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
     words()
   elif abcde == "e":
