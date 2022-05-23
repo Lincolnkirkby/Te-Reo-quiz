@@ -53,6 +53,8 @@ def quizb():
       quizb()
   else:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
+    if (correct/(question-1)) == 1:
+      print("congratulations on 100% you truly know your stuff")
     print("A animals,B objects,C family members,D colours or E all of the above")
     l = "list"
     question = 0
@@ -71,6 +73,8 @@ def quiza():
   if not l:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
+    if (correct/(question-1)) == 1:
+      print("congratulations on 100% you truly know your stuff")
     l = "list"
     question = 0
     abc()
@@ -197,7 +201,7 @@ def abc():
     questionlista = ['family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother']
     questionlistb = ['whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine']
     answersforlistaa = ['whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine']
-    answersforlistab = ['ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','tāua']
+    answersforlistab = ['ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua']
     quiza()
   elif abcde == "d":
     print("you have selected colours")
@@ -210,9 +214,11 @@ def abc():
   elif abcde == "e":
     questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit','pen','pencil','book','scissors','paper','eraser','ruler','book','computer','oven','door','window','cupboard','chair','table','fan','family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother','red','green','blue','yellow','white','pink','purple','black','orange']
     questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine','pukapuka','rorohiko','oumu','tatau ','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','Mangu','karaka']
-    print("you have selected all of the above")
+    answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine','pukapuka','rorohiko','oomu','tatau ','wini','kaapata','nohoanga','paparahua','teepu','koowhiuwhiu','whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
+    answersforlistab = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine','pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu','ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua','whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','Pango','karaka']
+    print("you have selected all of the above, 50 questions")
     print("for simplicity and because family members anre included in this quiz the quiz you have chosen can only be done with the Māori names of english words")
-    quizb()
+    quiza()
   elif abcde == "quit":
     quit()
   else:
