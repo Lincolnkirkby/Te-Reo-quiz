@@ -1,5 +1,6 @@
 #global variables 11/5/22
 import random
+import time
 questionlista = []
 questionlistb = []
 answersforlistaa = []
@@ -13,6 +14,82 @@ print("Kia ora welcome to the Te Reo quiz, this quiz is designed to test your Te
 print("what part of the language do you struggle with most? or would like to test your skills on?")
 #the current number of quizes is not set there might not acctually be 5 options by the end 11/5/22
 print("A animals,B objects,C family members,D colours or E all of the above")
+
+def quizf():
+  global questionlista
+  global questionlistb
+  global answersforlistaa
+  global answersforlistab
+  global question
+  global correct
+  global wrong
+  global l
+  question += 1
+  if not l:
+    print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
+    print("A animals,B objects,C family members,D colours or E all of the above")
+    if correct ==50:
+      print("e kore e taea")
+    l = "list"
+    question = 0
+    abc()
+  if question ==1:
+    print("question"+str(question))
+  elif question == 6:
+    print("Kua whakautua e koe nga patai e 5 ka ",str(correct)+"/"+str(question-1),"/",(correct/(question-1))*100,"% to tatau, tae noa ki tenei wa")
+  else:
+    print("pātai "+str(question))
+  if l == "list":
+    l = list(range(len(questionlistb)))
+    
+  question1 = random.choice(l)
+  print("he aha te ingoa Māori o",questionlista[question1])
+  answer1 = input().lower()
+  
+  if answer1 == answersforlistaa[question1]:
+    print("congrats")
+    correct += 1
+    l.remove(question1)
+    quizf()
+  elif answer1 == questionlistb[question1]:
+    print("congrats")
+    correct += 1
+    l.remove(question1)
+    quizf()
+  elif answer1 == answersforlistab[question1]:
+    print("congrats")
+    correct += 1
+    l.remove(question1)
+    quizf()
+  elif answer1 == "quit":
+    quit()
+  elif answer1 == "return":
+    question = 0
+    l = "list"
+    print("A animals,B objects,C family members,D colours or E all of the above")
+    abc()
+  else: 
+    if answersforlistab[question1] != questionlistb[question1]:
+      if answersforlistab[question1] == answersforlistaa[question1]:
+        print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1],"or",answersforlistaa[question1])
+        wrong += 1
+        l.remove(question1)
+        quizf()
+      else:
+        print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1])
+        wrong += 1
+        l.remove(question1)
+        quizf()
+    elif answersforlistab[question1] != answersforlistaa[question1]:
+      print("sorry but the anwer was either",answersforlistab[question1],"or",answersforlistaa[question1])
+      wrong += 1
+      l.remove(question1)
+      quizf()
+    else: 
+      print("sorry but the anwer was",answersforlistab[question1])
+      wrong += 1
+      l.remove(question1)
+      quizf()
 def quizb():
   global questionlista
   global questionlistb
@@ -91,7 +168,6 @@ def quiza():
     
   question1 = random.choice(l)
   print("what is the Māori name for",questionlista[question1])
-  print(answersforlistaa[question1],questionlistb[question1],answersforlistab[question1])
   answer1 = input().lower()
   
   if answer1 == answersforlistaa[question1]:
@@ -215,14 +291,19 @@ def abc():
     words()
   elif abcde == "e":
     questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit','pen','pencil','book','scissors','paper','eraser','ruler','book','computer','oven','door','window','cupboard','chair','table','fan','family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother','red','green','blue','yellow','white','pink','purple','black','orange']
-    questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oumu','tatau ','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','mangu','karaka']
-    answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oomu','tatau ','wini','kaapata','nohoanga','paparahua','koowhiuwhiu','whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
+    questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oumu','tatau','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','mangu','karaka']
+    answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oomu','tatau','wini','kaapata','nohoanga','paparahua','koowhiuwhiu','whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
     answersforlistab = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','pene','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu','ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua','whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','pango','karaka']
     print("you have selected all of the above, 50 questions")
     print("for simplicity and because family members anre included in this quiz the quiz you have chosen can only be done with the Māori names of english words")
     quiza()
   elif abcde =="f":
-    print("you have selected super hard quizzz 15000000 questions are you sure you wan to continue")
+    print("Kua whiriwhiria e koe tetahi patai tino uaua 50 nga patai e tino mohio ana koe kei te hiahia haere tonu koe")
+    questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit','pen','pencil','book','scissors','paper','eraser','ruler','book','computer','oven','door','window','cupboard','chair','table','fan','family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother','red','green','blue','yellow','white','pink','purple','black','orange']
+    questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oumu','tatau','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','mangu','karaka']
+    answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oomu','tatau','wini','kaapata','nohoanga','paparahua','koowhiuwhiu','whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
+    answersforlistab = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','pene','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu','ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua','whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','pango','karaka']
+    quizf()
   elif abcde == "quit":
     quit()
   else: 
