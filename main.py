@@ -69,6 +69,7 @@ def quizf():
     print("A animals,B objects,C family members,D colours or E all of the above")
     abc()
   else: 
+    #this here is testing whether there are multiple answers to display or not
     if answersforlistab[question1] != questionlistb[question1]:
       if answersforlistab[question1] == answersforlistaa[question1]:
         print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1],"or",answersforlistaa[question1])
