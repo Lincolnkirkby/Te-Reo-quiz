@@ -23,14 +23,14 @@ def quizf():
   global question
   global correct
   global wrong
-  global l
+  global list
   question += 1
-  if not l:
+  if not list:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
     if correct ==50:
       print("e kore e taea")
-    l = "list"
+    list = "list"
     question = 0
     abc()
   if question ==1:
@@ -39,8 +39,8 @@ def quizf():
     print("Kua whakautua e koe nga patai e 5 ka ",str(correct)+"/"+str(question-1),"/",(correct/(question-1))*100,"% to tatau, tae noa ki tenei wa")
   else:
     print("pātai "+str(question))
-  if l == "list":
-    l = list(range(len(questionlistb)))
+  if list == "list":
+    list = list(range(len(questionlistb)))
     
   question1 = random.choice(l)
   print("he aha te ingoa Māori o",questionlista[question1])
@@ -49,23 +49,23 @@ def quizf():
   if answer1 == answersforlistaa[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quizf()
   elif answer1 == questionlistb[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quizf()
   elif answer1 == answersforlistab[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quizf()
   elif answer1 == "quit":
     quit()
   elif answer1 == "return":
     question = 0
-    l = "list"
+    list = "list"
     print("A animals,B objects,C family members,D colours or E all of the above")
     abc()
   else: 
@@ -74,22 +74,22 @@ def quizf():
       if answersforlistab[question1] == answersforlistaa[question1]:
         print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1],"or",answersforlistaa[question1])
         wrong += 1
-        l.remove(question1)
+        list.remove(question1)
         quizf()
       else:
         print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1])
         wrong += 1
-        l.remove(question1)
+        list.remove(question1)
         quizf()
     elif answersforlistab[question1] != answersforlistaa[question1]:
       print("sorry but the anwer was either",answersforlistab[question1],"or",answersforlistaa[question1])
       wrong += 1
-      l.remove(question1)
+      list.remove(question1)
       quizf()
     else: 
       print("sorry but the anwer was",answersforlistab[question1])
       wrong += 1
-      l.remove(question1)
+      list.remove(question1)
       quizf()
 def quizb():
   global questionlista
@@ -97,11 +97,11 @@ def quizb():
   global question
   global correct
   global wrong
-  global l
+  global list
   question += 1
-  if l == "list":
-    l = list(range(len(questionlistb)))
-  if l:
+  if list == "list":
+    list = list(range(len(questionlistb)))
+  if list:
     question1 = random.choice(l)
     if question ==1:
       print("question"+str(question))
@@ -115,26 +115,26 @@ def quizb():
     if answer1 == questionlista[question1]:
       print("congrats")
       correct += 1
-      l.remove(question1)
+      list.remove(question1)
       quizb()
     elif answer1 == "quit":
       quit()
     elif answer1 == "return":
-      l = "list"
+      list = "list"
       question = 0
       print("A animals,B objects,C family members,D colours or E all of the above")
       abc()
     else:
       print("sorry but the anwer was",questionlista[question1])
       wrong += 1
-      l.remove(question1)
+      list.remove(question1)
       quizb()
   else:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     if (correct/(question-1)) == 1:
       print("congratulations on 100% you truly know your stuff")
     print("A animals,B objects,C family members,D colours or E all of the above")
-    l = "list"
+    list = "list"
     question = 0
     abc() 
 #this is the quiz for the Māori names of english words 13/5/22
@@ -146,16 +146,16 @@ def quiza():
   global question
   global correct
   global wrong
-  global l
+  global list
   question += 1
-  if not l:
+  if not list:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
     if correct ==50:
       print("AMAZING WORK you got all the default quizz answers all correct YOUR A NATURAL why not try our secret hard dificulty by typing: F")
     elif (correct/(question-1)) == 1:
       print("congratulations on 100% you truly know your stuff")
-    l = "list"
+    list = "list"
     question = 0
     abc()
   if question ==1:
@@ -164,8 +164,8 @@ def quiza():
     print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% at any time you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
   else:
     print("question"+str(question))
-  if l == "list":
-    l = list(range(len(questionlistb)))
+  if list == "list":
+    list = list(range(len(questionlistb)))
     
   question1 = random.choice(l)
   print("what is the Māori name for",questionlista[question1])
@@ -174,23 +174,23 @@ def quiza():
   if answer1 == answersforlistaa[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quiza()
   elif answer1 == questionlistb[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quiza()
   elif answer1 == answersforlistab[question1]:
     print("congrats")
     correct += 1
-    l.remove(question1)
+    list.remove(question1)
     quiza()
   elif answer1 == "quit":
     quit()
   elif answer1 == "return":
     question = 0
-    l = "list"
+    list = "list"
     print("A animals,B objects,C family members,D colours or E all of the above")
     abc()
   else: 
@@ -198,22 +198,22 @@ def quiza():
       if answersforlistab[question1] == answersforlistaa[question1]:
         print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1],"or",answersforlistaa[question1])
         wrong += 1
-        l.remove(question1)
+        list.remove(question1)
         quiza()
       else:
         print("sorry but the anwer was either",answersforlistab[question1],"or",questionlistb[question1])
         wrong += 1
-        l.remove(question1)
+        list.remove(question1)
         quiza()
     elif answersforlistab[question1] != answersforlistaa[question1]:
       print("sorry but the anwer was either",answersforlistab[question1],"or",answersforlistaa[question1])
       wrong += 1
-      l.remove(question1)
+      list.remove(question1)
       quiza()
     else: 
       print("sorry but the anwer was",answersforlistab[question1])
       wrong += 1
-      l.remove(question1)
+      list.remove(question1)
       quiza()
       
 #words is to ask the player whether they want to traslate english words or Te Reo words 13/2/22
