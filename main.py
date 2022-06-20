@@ -237,7 +237,7 @@ def words():
     print("answer A/B you can also answer :quit: to quit or :back: to go back ")
     words()
     
-#abcde is def so that I can call it at any time its purpose is to personalise thier quiz questions 11/5/22
+#abc is def so that I can call it at any time its purpose is to personalise thier quiz questions 11/5/22
 def abc():
   abcde = input().lower()
   global questionlista
@@ -246,7 +246,7 @@ def abc():
   global answersforlistab
   if abcde == "a":
     print("you have selected animals")
-    print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or")
+    print("do you want to guess A: the Māori names of english words or B: the english names of Māori words")
     questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit']
     questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti']
     answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti']
@@ -254,7 +254,7 @@ def abc():
     words()
   elif abcde == "b":
     print("you have selected objects")
-    print("A:household objects or B: school objects")
+    print("A:household objects or B: school objects?")
     ab = input().lower()
     if ab == "a":
       print("do you want to guess A: the Māori names of english words or B: the english names of Māori words")
@@ -276,7 +276,7 @@ def abc():
   elif abcde == "c":
     print("you have selected family members 17 questions")
     print("the quiz you have chosen can only be done with the Māori names of english words")
-    print("*hint use double vowels instaid of macrons*")
+    print("*hint use double vowels instead of macrons*")
     questionlista = ['family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother']
     questionlistb = ['whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine']
     answersforlistaa = ['whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine']
@@ -296,7 +296,7 @@ def abc():
     answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oomu','tatau','wini','kaapata','nohoanga','paparahua','koowhiuwhiu','whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
     answersforlistab = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','pene','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu','ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua','whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','pango','karaka']
     print("you have selected all of the above, 50 questions")
-    print("for simplicity and because family members anre included in this quiz the quiz you have chosen can only be done with the Māori names of english words")
+    print("for simplicity and because family members are included in this quiz the quiz you have chosen can only be done with the Māori names of english words")
     quiza()
   elif abcde =="f":
     print("Kua whiriwhiria e koe tetahi patai tino uaua 50 nga patai e tino mohio ana koe kei te hiahia haere tonu koe")
