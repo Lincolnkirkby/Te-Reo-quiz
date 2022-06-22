@@ -54,6 +54,8 @@ def quizf():
   elif answer1 == "return":
     list_sum = "list"
     question = 0
+    correct = 0
+    wrong = 0
     print("A animals,B objects,C family members,D colours or E all of the above")
     quiz_choicer()
   else:
@@ -92,6 +94,8 @@ def quizb(): # quiz b is english names of te reo words
     elif answer1 == "return":
       list_sum = "list"
       question = 0
+      correct = 0
+      wrong = 0
       print("A animals,B objects,C family members,D colours or E all of the above")
       quiz_choicer()
     else:
@@ -106,6 +110,8 @@ def quizb(): # quiz b is english names of te reo words
     print("A animals,B objects,C family members,D colours or E all of the above")
     list_sum = "list"
     question = 0
+    correct = 0
+    wrong = 0
     quiz_choicer() 
 #this is the quiz for the Māori names of english words 13/5/22
 def quiza():
@@ -118,6 +124,7 @@ def quiza():
   global wrong
   global list_sum
   question += 1
+  #this reads whether or not the list is empty or not, if so the player has answerd all the questions and is told thier score
   if not list_sum:
     print("you have answerd all of the questions your final score was",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"%")
     print("A animals,B objects,C family members,D colours or E all of the above")
@@ -130,7 +137,7 @@ def quiza():
     quiz_choicer()
   if question ==1:
     print("question"+str(question))
-  elif question == 6:
+  elif question == 6:#the quiz is required to only have 5 questions so the player is not required to complete the quiz and is also told/reminded of possible inputs
     print("you have answerd 5 questions your score is",str(correct)+"/"+str(question-1),"or",(correct/(question-1))*100,"% at any time you can type quit to quit or return to return to the start or you can continue answering the questions to see your final score")
   else:
     print("question"+str(question))
@@ -188,13 +195,13 @@ def quiza():
       quiza()
       
 #words is to ask the player whether they want to traslate english words or Te Reo words 13/2/22
-def words():
+def quiz_choicer_pt2():
   global questionlista
   global questionlistb
   names = input().lower()
   if names == "a":
-    print("you have selected: the Māori names of english words 8 questions")
-    print("*hint use double vowels instaid of macrons*")
+    print("you have selected: the Māori names of english words")
+    print("*hint use double vowels instead of macrons*")
     quiza()
   elif names == "b":
     print("you have selected: the english names of Māori words")
@@ -206,7 +213,7 @@ def words():
     quiz_choicer()
   else:
     print("answer A/B you can also answer :quit: to quit or :back: to go back ")
-    words()
+    quiz_choicer_pt2()
     
 #quiz_choicer is def so that I can call it at any time its purpose is to personalise thier quiz questions 11/5/22
 def quiz_choicer():
@@ -223,7 +230,7 @@ def quiz_choicer():
     questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti']
     answersforlistaa = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti']
     answersforlistab = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti']
-    words()
+    quiz_choicer_pt2()
   elif quiz_choicer_answer == "b":
     print("you have selected objects")
     print("A:household objects or B: school objects?")
@@ -234,14 +241,14 @@ def quiz_choicer():
       questionlistb = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine']
       answersforlistaa = ['pene','peneraakau','pukapuka','kutikuti','pepa','uukui','Raakauine']
       answersforlistab = ['pene','pene','pukapuka','kutikuti','pepa','uukui','Raakauine']
-      words()
+      quiz_choicer_pt2()
     if ab == "b":
       print("do you want to guess A: thee Māori names of english words or B: the english names of Māori words")
       questionlista = ['book','computer','oven','door','window','cupboard','chair','table','fan']
       questionlistb = ['pukapuka','rorohiko','oumu','tatau','wini','kaapata','tuuru','papa-kai','kooheuheu']
       answersforlistaa = ['pukapuka','rorohiko','oomu','tatau','wini','kaapata','nohoanga','paparahua','koowhiuwhiu']
       answersforlistab = ['pukapuka','rorohiko','imu','whatitoka','matapihi','kaapata','tuuru','paparahua','koowhiuwhiu']
-      words()
+      quiz_choicer_pt2()
     else:
       print("answer A/B/C/D/E/F or anwser quit to quit")
       quiz_choicer()
@@ -250,7 +257,7 @@ def quiz_choicer():
     print("the quiz you have chosen can only be done with the Māori names of english words")
     print("*hint use double vowels instead of macrons*")
     questionlista = ['family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother']
-    questionlistb = ['whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine']
+    questionlistb = ['whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuahine','teina','kaikuahine','tuupuna','koro','tipuna wahine']
     answersforlistaa = ['whanau','maatua','paapara','whaea','tamaiti','tama','tamaahine','tungaane','teina','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tupuna wahine']
     answersforlistab = ['ngare','maatua','paapaa','kookara','taitamaiti','tama','tamawahine','tungaane','tiena','tuaakana','maataamua','tuaakana','taina','kaikuahine','tiipuna','tipuna taane','taaua']
     quiza()
@@ -261,7 +268,7 @@ def quiz_choicer():
     answersforlistaa = ['whero','kakariki','kikorangi','kowhai','ma','mawhero','tawa','mangumangu','karaka']
     answersforlistab = ['whero','kakariki','kikorangi','kowhai','ma','mawhero','paapura','pango','karaka']
     print("do you want to guess A: the Māori names of english words or B: the english names of Māori words or C: both")
-    words()
+    quiz_choicer_pt2()
   elif quiz_choicer_answer == "e":
     questionlista = ['cat','dog','sheep','pig','cow','horse','chicken','rabbit','pen','pencil','book','scissors','paper','eraser','ruler','book','computer','oven','door','window','cupboard','chair','table','fan','family','parents','father','mother','child','son','daughter','brother of a female','younger brother of a male','older brother of a male','eldest brother/sister','older sister of a female','younger sister of a female','sister of a male','grandparents','grandfather','grandmother','red','green','blue','yellow','white','pink','purple','black','orange']
     questionlistb = ['ngeru','kuri','hipi','poaka','kau','hooiho','heihei','raapeti','pene','peneraakau','pukapuka','kutikuti','pepa','uukui','raakauine','pukapuka','rorohiko','oumu','tatau','wini','kaapata','tuuru','papa-kai','kooheuheu','whaamere','maatua','matua','maamaa','tamaiti','tama','tamaahine','tungaane','tiana','tuaakana','kauaemua','tuaakana','teina','kaikuahine','tuupuna','tupuna taane','tipuna wahine','whero','kakariki','kikorangi','kowhai','ma','mawhero','waiporoporo','mangu','karaka']
